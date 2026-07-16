@@ -17,20 +17,20 @@
         <?php if(isset($_SESSION['user_id'])): ?>
             <?php if($_SESSION['role'] === 'admin'): ?>
                 <li class="nav-item">
-                    <a class="nav-link <?= $page == 'dashboard_admin' ? 'active fw-bold text-primary bg-primary bg-opacity-10' : '' ?> rounded-pill px-3 mx-1 transition-all" href="<?= BASE_URL ?>?page=dashboard_admin"><i class="bi bi-grid-1x2-fill me-1"></i> Dashboard</a>
+                    <a class="nav-link <?= $page == 'dashboard_admin' ? 'active fw-bold' : '' ?> rounded-pill px-3 mx-1 transition-all" href="<?= BASE_URL ?>?page=dashboard_admin"><i class="bi bi-grid-1x2-fill me-1"></i> Dashboard</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link <?= $page == 'users' ? 'active fw-bold text-primary bg-primary bg-opacity-10' : '' ?> rounded-pill px-3 mx-1 transition-all" href="<?= BASE_URL ?>?page=users"><i class="bi bi-people-fill me-1"></i> Users</a>
+                    <a class="nav-link <?= $page == 'users' ? 'active fw-bold' : '' ?> rounded-pill px-3 mx-1 transition-all" href="<?= BASE_URL ?>?page=users"><i class="bi bi-people-fill me-1"></i> Users</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link <?= $page == 'subjects' ? 'active fw-bold text-primary bg-primary bg-opacity-10' : '' ?> rounded-pill px-3 mx-1 transition-all" href="<?= BASE_URL ?>?page=subjects"><i class="bi bi-book-half me-1"></i> Mata Pelajaran</a>
+                    <a class="nav-link <?= $page == 'subjects' ? 'active fw-bold' : '' ?> rounded-pill px-3 mx-1 transition-all" href="<?= BASE_URL ?>?page=subjects"><i class="bi bi-book-half me-1"></i> Mata Pelajaran</a>
                 </li>
             <?php else: ?>
                 <li class="nav-item">
-                    <a class="nav-link <?= $page == 'dashboard_student' ? 'active fw-bold text-primary bg-primary bg-opacity-10' : '' ?> rounded-pill px-3 mx-1 transition-all" href="<?= BASE_URL ?>?page=dashboard_student"><i class="bi bi-house-door-fill me-1"></i> Dashboard</a>
+                    <a class="nav-link <?= $page == 'dashboard_student' ? 'active fw-bold' : '' ?> rounded-pill px-3 mx-1 transition-all" href="<?= BASE_URL ?>?page=dashboard_student"><i class="bi bi-house-door-fill me-1"></i> Dashboard</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link <?= $page == 'groups' ? 'active fw-bold text-primary bg-primary bg-opacity-10' : '' ?> rounded-pill px-3 mx-1 transition-all" href="<?= BASE_URL ?>?page=groups"><i class="bi bi-collection-fill me-1"></i> Kelompok Belajar</a>
+                    <a class="nav-link <?= $page == 'groups' ? 'active fw-bold' : '' ?> rounded-pill px-3 mx-1 transition-all" href="<?= BASE_URL ?>?page=groups"><i class="bi bi-collection-fill me-1"></i> Kelompok Belajar</a>
                 </li>
             <?php endif; ?>
         <?php endif; ?>
