@@ -1,7 +1,7 @@
 <?php require 'views/layouts/header.php'; ?>
 <div class="d-flex justify-content-between align-items-end mb-4">
     <div>
-        <h2 class="fw-bold mb-1">Halo, <?= escape($_SESSION['name']) ?> 👋</h2>
+        <h2 class="fw-bold mb-1">Halo, <?= escape($_SESSION['name']) ?></h2>
         <p class="text-muted mb-0">Selamat datang di Dashboard Siswa. Mari mulai belajar!</p>
     </div>
     <a href="<?= BASE_URL ?>?page=groups&action=create" class="btn btn-primary rounded-pill px-4 shadow-sm"><i class="bi bi-plus-circle me-2"></i>Buat Kelompok Baru</a>
@@ -16,15 +16,22 @@
             <div class="card-body">
                 <div class="list-group list-group-flush mt-2">
                     <?php foreach($myGroups as $g): ?>
+                        <?php 
+                            $colors = ['primary', 'success', 'danger', 'warning text-dark', 'info', 'secondary'];
+                            $iconColors = ['primary', 'success', 'danger', 'warning', 'info', 'secondary'];
+                            $colorIndex = hexdec(substr(md5($g['name'] . $g['subject_name']), 0, 1)) % count($colors);
+                            $bgClass = 'bg-' . str_replace(' text-dark', '', $colors[$colorIndex]);
+                            $textClass = 'text-' . $iconColors[$colorIndex];
+                        ?>
                         <a href="<?= BASE_URL ?>?page=groups&action=show&id=<?= $g['id'] ?>" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center p-3 mb-2 rounded border">
                             <div class="d-flex align-items-center">
-                                <div class="bg-primary bg-opacity-10 text-primary rounded-circle d-flex align-items-center justify-content-center me-3" style="width: 48px; height: 48px;">
-                                    <i class="bi bi-book fs-5"></i>
+                                <div class="<?= $bgClass ?> bg-opacity-10 <?= $textClass ?> rounded-circle d-flex align-items-center justify-content-center me-3" style="width: 48px; height: 48px;">
+                                    <i class="bi bi-journal-text fs-5"></i>
                                 </div>
                                 <div>
                                     <h6 class="mb-1 fw-bold"><?= escape($g['name']) ?></h6>
                                     <small class="text-muted d-flex align-items-center">
-                                        <span class="badge bg-primary rounded-pill px-2 py-1 me-2"><?= escape($g['subject_name']) ?></span> 
+                                        <span class="badge <?= $bgClass ?> rounded-pill px-2 py-1 me-2" style="border: none;"><span class="text-white"><?= escape($g['subject_name']) ?></span></span> 
                                         <span><i class="bi bi-people-fill me-1 text-secondary"></i> <?= $g['member_count'] ?>/<?= $g['max_members'] ?> Anggota</span>
                                     </small>
                                 </div>
