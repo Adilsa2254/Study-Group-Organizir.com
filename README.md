@@ -5,13 +5,13 @@ Proyek ini dibangun berdasarkan studi kasus nyata untuk mengatasi permasalahan y
 Project web ini mengadopsi konsep **SaaS (Software as a Service)**. Dengan antarmuka modern, bersih, dan intuitif, platform ini memungkinkan siswa untuk membuat kelompok belajar (Study Groups) berdasarkan mata pelajaran, mengunggah dan membagikan materi, berdiskusi melalui komentar, dan mengelola jadwal pertemuan belajar secara efisien.
 
 **URL Project**
-- 🌐 : https://study-group-organizir.com
-- 🐙 : https://github.com/Adilsa2254/Study-Group-Organizir.com
-- ▶️ : https://youtu.be/contoh_presentasi_uas
+- Website : https://study-group-organizir.com
+- GitHub : https://github.com/Adilsa2254/Study-Group-Organizir.com
+- Video : https://youtu.be/contoh_presentasi_uas
 
 ---
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 Aplikasi ini dibangun menggunakan tumpukan teknologi berikut yang memastikan performa cepat tanpa *overhead* kerangka kerja besar:
 
@@ -34,7 +34,7 @@ Aplikasi ini dibangun menggunakan tumpukan teknologi berikut yang memastikan per
 
 ---
 
-## ✨ Fitur Utama
+## Fitur Utama
 
 - **Eksplorasi Kelompok Belajar**: Daftar kelompok belajar dengan tata letak *Cards* dinamis dan responsif.
 - **Autentikasi & Manajemen Profil**: Sistem *login*, *register*, dan pengaturan profil pengguna (termasuk upload avatar).
@@ -45,7 +45,7 @@ Aplikasi ini dibangun menggunakan tumpukan teknologi berikut yang memastikan per
 
 ---
 
-## 🚀 Cara Instalasi Project
+## Cara Instalasi Project
 
 Ikuti langkah-langkah di bawah ini untuk menjalankan proyek secara lokal di komputer Anda:
 
@@ -95,7 +95,7 @@ Ikuti langkah-langkah di bawah ini untuk menjalankan proyek secara lokal di komp
 
 ---
 
-## 📁 Struktur Direktori
+## Struktur Direktori
 
 ```text
 Study-Group-Organizir(uas)/
