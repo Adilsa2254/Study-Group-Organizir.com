@@ -41,6 +41,10 @@ switch ($page) {
         require 'controllers/StudentDashboardController.php';
         break;
 
+    case 'profile':
+        require 'controllers/ProfileController.php';
+        break;
+
     case 'users':
         require 'controllers/UserController.php';
         break;

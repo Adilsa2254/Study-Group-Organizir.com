@@ -20,6 +20,7 @@ if ($page === 'login') {
             $_SESSION['user_id'] = $user['id'];
             $_SESSION['name'] = $user['name'];
             $_SESSION['role'] = $user['role'];
+            $_SESSION['profile_photo'] = $user['profile_photo'] ?? null;
             
             $_SESSION['flash_message'] = "Login berhasil! Selamat datang, {$user['name']}.";
             $_SESSION['flash_type'] = "success";

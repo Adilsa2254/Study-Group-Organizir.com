@@ -40,9 +40,13 @@
         <?php if(isset($_SESSION['user_id'])): ?>
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle d-flex align-items-center p-1 border rounded-pill shadow-sm" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="padding-right: 1rem !important;">
-                    <div class="bg-primary text-white rounded-circle d-flex justify-content-center align-items-center me-2" style="width: 32px; height: 32px;">
-                        <?= strtoupper(substr($_SESSION['name'], 0, 1)) ?>
-                    </div>
+                    <?php if (isset($_SESSION['profile_photo']) && !empty($_SESSION['profile_photo']) && file_exists('uploads/profiles/' . $_SESSION['profile_photo'])): ?>
+                        <img src="uploads/profiles/<?= escape($_SESSION['profile_photo']) ?>" alt="Profile Photo" class="rounded-circle me-2 object-fit-cover" style="width: 32px; height: 32px;">
+                    <?php else: ?>
+                        <div class="bg-primary text-white rounded-circle d-flex justify-content-center align-items-center me-2" style="width: 32px; height: 32px;">
+                            <?= strtoupper(substr($_SESSION['name'], 0, 1)) ?>
+                        </div>
+                    <?php endif; ?>
                     <span class="fw-semibold text-dark me-1"><?= escape(explode(' ', trim($_SESSION['name']))[0]) ?></span>
                 </a>
                 <ul class="dropdown-menu dropdown-menu-end border-0 shadow mt-2 rounded-3" aria-labelledby="navbarDropdown">
@@ -50,6 +54,8 @@
                         <div class="fw-bold"><?= escape($_SESSION['name']) ?></div>
                         <div class="text-muted small"><?= escape(ucfirst($_SESSION['role'])) ?></div>
                     </li>
+                    <li><a class="dropdown-item py-2" href="<?= BASE_URL ?>?page=profile"><i class="bi bi-person-circle me-2"></i> Profil Saya</a></li>
+                    <li><hr class="dropdown-divider"></li>
                     <li><a class="dropdown-item text-danger fw-semibold py-2" href="<?= BASE_URL ?>?page=logout"><i class="bi bi-box-arrow-right me-2"></i> Keluar</a></li>
                 </ul>
             </li>

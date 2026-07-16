@@ -64,5 +64,25 @@ class User {
         $stmt = $this->pdo->prepare("DELETE FROM users WHERE id = :id");
         return $stmt->execute(['id' => $id]);
     }
+    
+    // Profile functions
+    public function updateProfile($id, $name, $email) {
+        $stmt = $this->pdo->prepare("UPDATE users SET name = :name, email = :email WHERE id = :id");
+        return $stmt->execute([
+            'id' => $id,
+            'name' => $name,
+            'email' => $email
+        ]);
+    }
+    
+    public function updateProfileWithPhoto($id, $name, $email, $profile_photo) {
+        $stmt = $this->pdo->prepare("UPDATE users SET name = :name, email = :email, profile_photo = :profile_photo WHERE id = :id");
+        return $stmt->execute([
+            'id' => $id,
+            'name' => $name,
+            'email' => $email,
+            'profile_photo' => $profile_photo
+        ]);
+    }
 }
 ?>
