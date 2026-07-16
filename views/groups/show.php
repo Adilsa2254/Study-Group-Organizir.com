@@ -3,9 +3,14 @@
 <div class="d-flex justify-content-between align-items-center mb-4">
     <a href="<?= BASE_URL ?>?page=groups" class="back-link"><i class="bi bi-arrow-left me-2"></i>Kembali ke Daftar Kelompok</a>
     
-    <a href="<?= BASE_URL ?>?page=groups&action=export_pdf&id=<?= $group['id'] ?>" class="btn btn-outline-danger btn-sm rounded-pill shadow-sm">
-        <i class="bi bi-file-earmark-pdf-fill me-1"></i> Download Laporan PDF
-    </a>
+    <div>
+        <a href="<?= BASE_URL ?>?page=groups&action=export_excel&id=<?= $group['id'] ?>" class="btn btn-outline-success btn-sm rounded-pill shadow-sm me-2">
+            <i class="bi bi-file-earmark-excel-fill me-1"></i> Download Laporan Excel
+        </a>
+        <a href="<?= BASE_URL ?>?page=groups&action=export_pdf&id=<?= $group['id'] ?>" class="btn btn-outline-danger btn-sm rounded-pill shadow-sm">
+            <i class="bi bi-file-earmark-pdf-fill me-1"></i> Download Laporan PDF
+        </a>
+    </div>
 </div>
 
 <div class="card shadow-sm border-0 mb-4">

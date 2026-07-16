@@ -213,4 +213,43 @@ elseif ($action === 'export_pdf') {
     $pdf->Output('D', 'Laporan_Kelompok_' . preg_replace('/[^A-Za-z0-9\-]/', '_', $group['name']) . '.pdf');
     exit;
 }
+elseif ($action === 'export_excel') {
+    $id = $_GET['id'] ?? 0;
+    $group = $groupModel->findById($id);
+    
+    if (!$group) {
+        header('Location: ' . BASE_URL . '?page=groups');
+        exit;
+    }
+    
+    $members = $memberModel->getMembers($id);
+    
+    require_once 'library/SimpleXLSXGen/SimpleXLSXGen.php';
+    
+    $data = [
+        ['<center><b>Laporan Data Anggota Kelompok Belajar</b></center>', '', '', ''],
+        ['', '', '', ''],
+        ['<b>Nama Kelompok</b>', $group['name'], '', ''],
+        ['<b>Mata Pelajaran</b>', $group['subject_name'], '', ''],
+        ['<b>Dibuat Oleh</b>', $group['creator_name'], '', ''],
+        ['', '', '', ''],
+        ['<b>No</b>', '<b>Nama</b>', '<b>Email</b>', '<b>Tanggal Bergabung</b>']
+    ];
+    
+    $no = 1;
+    foreach($members as $m) {
+        $data[] = [
+            $no++,
+            $m['user_name'],
+            $m['user_email'],
+            date('d M Y', strtotime($m['joined_at']))
+        ];
+    }
+    
+    $filename = 'Laporan_Anggota_' . preg_replace('/[^A-Za-z0-9\-]/', '_', $group['name']) . '.xlsx';
+    
+    $xlsx = Shuchkin\SimpleXLSXGen::fromArray($data);
+    $xlsx->downloadAs($filename);
+    exit;
+}
 ?>

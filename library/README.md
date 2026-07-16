@@ -8,6 +8,7 @@ Catat setiap library yang ditambahkan di tabel berikut:
 |---|---|---|---|---|
 | **FPDF** | 1.86 | http://www.fpdf.org/ | Mencetak laporan data / daftar anggota menjadi PDF | 16 Juli 2026 |
 | **Parsedown** | 1.8.0 | https://github.com/erusev/parsedown | Mem-parsing Markdown (***bold***, dll) pada deskripsi kelompok | 16 Juli 2026 |
+| **SimpleXLSXGen** | 1.4 | https://github.com/shuchkin/simplexlsxgen | Meng-export data daftar anggota kelompok ke dalam format Excel (.xlsx) | 16 Juli 2026 |
 
 ## Cara Menambah Library Baru
 
