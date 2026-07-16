@@ -2,7 +2,7 @@
 
 <div class="d-flex justify-content-between align-items-end mb-4">
     <div>
-        <h2 class="fw-bold mb-1">Halo, <?= escape($_SESSION['name']) ?> 👋</h2>
+        <h2 class="fw-bold mb-1">Halo, <?= escape($_SESSION['name']) ?></h2>
         <p class="text-muted mb-0">Selamat datang di Pusat Kendali Administrator. Berikut adalah ringkasan sistem.</p>
     </div>
     <div class="text-muted small">
