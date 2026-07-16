@@ -150,4 +150,67 @@ elseif ($action === 'leave') {
     header('Location: ' . BASE_URL . '?page=groups&action=show&id=' . $id);
     exit;
 }
+elseif ($action === 'export_pdf') {
+    $id = $_GET['id'] ?? 0;
+    $group = $groupModel->findById($id);
+    
+    if (!$group) {
+        header('Location: ' . BASE_URL . '?page=groups');
+        exit;
+    }
+    
+    $members = $memberModel->getMembers($id);
+    
+    require_once 'library/fpdf/fpdf.php';
+    
+    $pdf = new FPDF();
+    $pdf->AddPage();
+    
+    // Title
+    $pdf->SetFont('Arial','B',16);
+    $pdf->Cell(0,10,'Laporan Kelompok Belajar',0,1,'C');
+    $pdf->Ln(5);
+    
+    // Group Details
+    $pdf->SetFont('Arial','B',12);
+    $pdf->Cell(40,8,'Nama Kelompok',0,0);
+    $pdf->SetFont('Arial','',12);
+    $pdf->Cell(0,8,': ' . $group['name'],0,1);
+    
+    $pdf->SetFont('Arial','B',12);
+    $pdf->Cell(40,8,'Mata Pelajaran',0,0);
+    $pdf->SetFont('Arial','',12);
+    $pdf->Cell(0,8,': ' . $group['subject_name'],0,1);
+    
+    $pdf->SetFont('Arial','B',12);
+    $pdf->Cell(40,8,'Dibuat Oleh',0,0);
+    $pdf->SetFont('Arial','',12);
+    $pdf->Cell(0,8,': ' . $group['creator_name'],0,1);
+    
+    $pdf->Ln(10);
+    
+    // Members Table
+    $pdf->SetFont('Arial','B',12);
+    $pdf->Cell(0,10,'Daftar Anggota (' . count($members) . '/' . $group['max_members'] . '):',0,1);
+    
+    $pdf->SetFont('Arial','B',10);
+    $pdf->Cell(10,8,'No',1,0,'C');
+    $pdf->Cell(60,8,'Nama',1,0,'C');
+    $pdf->Cell(70,8,'Email',1,0,'C');
+    $pdf->Cell(50,8,'Tanggal Bergabung',1,0,'C');
+    $pdf->Ln();
+    
+    $pdf->SetFont('Arial','',10);
+    $no = 1;
+    foreach($members as $m) {
+        $pdf->Cell(10,8,$no++,1,0,'C');
+        $pdf->Cell(60,8,$m['name'],1);
+        $pdf->Cell(70,8,$m['email'],1);
+        $pdf->Cell(50,8,date('d M Y', strtotime($m['joined_at'])),1,0,'C');
+        $pdf->Ln();
+    }
+    
+    $pdf->Output('D', 'Laporan_Kelompok_' . preg_replace('/[^A-Za-z0-9\-]/', '_', $group['name']) . '.pdf');
+    exit;
+}
 ?>

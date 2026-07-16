@@ -170,6 +170,30 @@
             border: 1px solid rgba(16, 185, 129, 0.2);
             font-weight: 600;
         }
+        .badge.bg-danger {
+            background-color: rgba(239, 68, 68, 0.1) !important;
+            color: #b91c1c !important;
+            border: 1px solid rgba(239, 68, 68, 0.2);
+            font-weight: 600;
+        }
+        .badge.bg-warning {
+            background-color: rgba(245, 158, 11, 0.1) !important;
+            color: #b45309 !important;
+            border: 1px solid rgba(245, 158, 11, 0.2);
+            font-weight: 600;
+        }
+        .badge.bg-info {
+            background-color: rgba(6, 182, 212, 0.1) !important;
+            color: #0e7490 !important;
+            border: 1px solid rgba(6, 182, 212, 0.2);
+            font-weight: 600;
+        }
+        .badge.bg-secondary {
+            background-color: rgba(107, 114, 128, 0.1) !important;
+            color: #374151 !important;
+            border: 1px solid rgba(107, 114, 128, 0.2);
+            font-weight: 600;
+        }
 
         /* Empty States */
         .empty-state {

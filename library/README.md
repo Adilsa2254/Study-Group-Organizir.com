@@ -6,7 +6,7 @@ Catat setiap library yang ditambahkan di tabel berikut:
 
 | Nama Library | Versi | Sumber (URL) | Digunakan Untuk | Tanggal Ditambahkan |
 |---|---|---|---|---|
-| _(belum ada)_ | | | | |
+| **FPDF** | 1.86 | http://www.fpdf.org/ | Mencetak laporan data / daftar anggota menjadi PDF | 16 Juli 2026 |
 
 ## Cara Menambah Library Baru
 

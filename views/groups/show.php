@@ -1,7 +1,11 @@
 <?php require 'views/layouts/header.php'; ?>
 
-<div class="mb-4">
+<div class="d-flex justify-content-between align-items-center mb-4">
     <a href="<?= BASE_URL ?>?page=groups" class="back-link"><i class="bi bi-arrow-left me-2"></i>Kembali ke Daftar Kelompok</a>
+    
+    <a href="<?= BASE_URL ?>?page=groups&action=export_pdf&id=<?= $group['id'] ?>" class="btn btn-outline-danger btn-sm rounded-pill shadow-sm">
+        <i class="bi bi-file-earmark-pdf-fill me-1"></i> Download Laporan PDF
+    </a>
 </div>
 
 <div class="card shadow-sm border-0 mb-4">
