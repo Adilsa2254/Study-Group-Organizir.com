@@ -19,8 +19,9 @@ class StudyGroup {
             $params['subject_id'] = $subject_id;
         }
         if ($keyword) {
-            $sql .= " AND (sg.name LIKE :keyword OR sg.description LIKE :keyword)";
-            $params['keyword'] = '%' . $keyword . '%';
+            $sql .= " AND (sg.name LIKE :keyword1 OR sg.description LIKE :keyword2)";
+            $params['keyword1'] = '%' . $keyword . '%';
+            $params['keyword2'] = '%' . $keyword . '%';
         }
         $sql .= " ORDER BY sg.created_at DESC";
         
