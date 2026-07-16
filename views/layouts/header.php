@@ -200,6 +200,21 @@
             transform: translateX(-4px);
             box-shadow: 0 4px 6px rgba(0,0,0,0.1);
         }
+        
+        /* Interactive List Items */
+        .list-group-item-action {
+            transition: all 0.2s ease;
+        }
+        .list-group-item-action:hover {
+            background-color: #f8fafc;
+            transform: translateY(-2px);
+            z-index: 1;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+        }
+        
+        .card {
+            transition: all 0.3s ease;
+        }
     </style>
 </head>
 <body>
