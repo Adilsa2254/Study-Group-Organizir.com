@@ -7,7 +7,7 @@ class Comment {
     }
 
     public function getByMaterial($material_id) {
-        $stmt = $this->pdo->prepare("SELECT c.*, u.name as user_name FROM comments c JOIN users u ON c.user_id = u.id WHERE c.material_id = :material_id ORDER BY c.created_at ASC");
+        $stmt = $this->pdo->prepare("SELECT c.*, u.name as user_name, u.profile_photo FROM comments c JOIN users u ON c.user_id = u.id WHERE c.material_id = :material_id ORDER BY c.created_at ASC");
         $stmt->execute(['material_id' => $material_id]);
         return $stmt->fetchAll();
     }

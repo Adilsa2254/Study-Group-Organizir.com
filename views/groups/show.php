@@ -181,9 +181,13 @@
                               <?php foreach($mat['comments'] as $c): ?>
                                   <div class="d-flex mb-3">
                                       <div class="flex-shrink-0">
-                                          <div class="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center" style="width: 40px; height: 40px;">
-                                              <?= strtoupper(substr($c['user_name'], 0, 1)) ?>
-                                          </div>
+                                          <?php if(!empty($c['profile_photo']) && file_exists('uploads/profiles/' . $c['profile_photo'])): ?>
+                                              <img src="uploads/profiles/<?= escape($c['profile_photo']) ?>" alt="Profile Photo" class="rounded-circle object-fit-cover shadow-sm border border-2 border-white" style="width: 40px; height: 40px;">
+                                          <?php else: ?>
+                                              <div class="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center shadow-sm border border-2 border-white" style="width: 40px; height: 40px;">
+                                                  <?= strtoupper(substr($c['user_name'], 0, 1)) ?>
+                                              </div>
+                                          <?php endif; ?>
                                       </div>
                                       <div class="flex-grow-1 ms-3">
                                           <div class="bg-light p-2 rounded">
