@@ -31,7 +31,7 @@
                                 <div>
                                     <h6 class="mb-1 fw-bold"><?= escape($g['name']) ?></h6>
                                     <small class="text-muted d-flex align-items-center">
-                                        <span class="badge <?= $bgClass ?> rounded-pill px-2 py-1 me-2" style="border: none;"><span class="text-white"><?= escape($g['subject_name']) ?></span></span> 
+                                        <span class="badge <?= $bgClass ?> rounded-pill px-2 py-1 me-2" style="border: none;"><?= escape($g['subject_name']) ?></span> 
                                         <span><i class="bi bi-people-fill me-1 text-secondary"></i> <?= $g['member_count'] ?>/<?= $g['max_members'] ?> Anggota</span>
                                     </small>
                                 </div>
