@@ -5,9 +5,8 @@ Proyek ini dibangun berdasarkan studi kasus nyata untuk mengatasi permasalahan y
 Project web ini mengadopsi konsep **SaaS (Software as a Service)**. Dengan antarmuka modern, bersih, dan intuitif, platform ini memungkinkan siswa untuk membuat kelompok belajar (Study Groups) berdasarkan mata pelajaran, mengunggah dan membagikan materi, berdiskusi melalui komentar, dan mengelola jadwal pertemuan belajar secara efisien.
 
 **URL Project**
-- Website : https://study-group-organizir.com
 - GitHub : https://github.com/Adilsa2254/Study-Group-Organizir.com
-- Video : https://youtu.be/contoh_presentasi_uas
+- Video : https://www.youtube.com/watch?v=3uQ4fOT96pk
 
 ---
 
