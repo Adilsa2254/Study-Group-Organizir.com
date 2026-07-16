@@ -204,8 +204,8 @@ elseif ($action === 'export_pdf') {
     $no = 1;
     foreach($members as $m) {
         $pdf->Cell(10,8,$no++,1,0,'C');
-        $pdf->Cell(60,8,$m['name'],1);
-        $pdf->Cell(70,8,$m['email'],1);
+        $pdf->Cell(60,8,$m['user_name'],1);
+        $pdf->Cell(70,8,$m['user_email'],1);
         $pdf->Cell(50,8,date('d M Y', strtotime($m['joined_at'])),1,0,'C');
         $pdf->Ln();
     }
