@@ -7,6 +7,7 @@ Catat setiap library yang ditambahkan di tabel berikut:
 | Nama Library | Versi | Sumber (URL) | Digunakan Untuk | Tanggal Ditambahkan |
 |---|---|---|---|---|
 | **FPDF** | 1.86 | http://www.fpdf.org/ | Mencetak laporan data / daftar anggota menjadi PDF | 16 Juli 2026 |
+| **Parsedown** | 1.8.0 | https://github.com/erusev/parsedown | Mem-parsing Markdown (***bold***, dll) pada deskripsi kelompok | 16 Juli 2026 |
 
 ## Cara Menambah Library Baru
 

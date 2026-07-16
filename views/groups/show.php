@@ -29,7 +29,14 @@
         <hr>
         <div class="mt-4">
             <h5 class="fw-bold d-flex align-items-center"><i class="bi bi-info-circle-fill text-primary me-2"></i>Tentang Kelompok</h5>
-            <p class="text-secondary" style="line-height: 1.6;"><?= nl2br(escape($group['description'])) ?></p>
+            <?php 
+                require_once 'library/Parsedown/Parsedown.php';
+                $parsedown = new Parsedown();
+                $parsedown->setSafeMode(true); // Protect against XSS
+            ?>
+            <div class="text-secondary markdown-content" style="line-height: 1.6;">
+                <?= $parsedown->text($group['description']) ?>
+            </div>
         </div>
         <div class="mt-4">
             <?php if(!$is_member): ?>
