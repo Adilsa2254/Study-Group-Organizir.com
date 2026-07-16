@@ -101,6 +101,15 @@ INSERT INTO users (name, email, password, role) VALUES
 ('Siti Siswa', 'siti@siswa.com', '$2y$12$64K9mbp3QpRgcfLCMbvnaOILoVh74Kf/Df8FDUZlgSt0g9gDpIc.2', 'student');
 
 INSERT INTO subjects (name, description) VALUES 
-('Matematika', 'Belajar kalkulus, aljabar, dll'),
-('Fisika', 'Fisika dasar dan mekanika'),
-('Pemrograman Web', 'HTML, CSS, PHP, MySQL');
+('Matematika', 'Belajar kalkulus, aljabar, trigonometri, dan statistika'),
+('Fisika', 'Fisika dasar, mekanika, dan termodinamika'),
+('Pemrograman Web', 'HTML, CSS, JavaScript, PHP, dan MySQL'),
+('Biologi', 'Anatomi, genetika, sel, dan ekosistem'),
+('Kimia', 'Kimia organik, anorganik, dan tabel periodik'),
+('Bahasa Inggris', 'Grammar, TOEFL, IELTS, dan percakapan'),
+('Algoritma & Struktur Data', 'Array, Linked List, Tree, Graph, dan Sorting'),
+('Jaringan Komputer', 'Topologi, OSI Layer, Cisco, dan Keamanan Jaringan'),
+('Desain Grafis', 'UI/UX, Photoshop, Illustrator, dan Figma'),
+('Manajemen & Bisnis', 'Akuntansi dasar, pemasaran, dan manajemen operasional'),
+('Sejarah', 'Sejarah dunia, sejarah Indonesia, dan peradaban kuno'),
+('Kecerdasan Buatan', 'Machine Learning, Deep Learning, dan Data Science');
